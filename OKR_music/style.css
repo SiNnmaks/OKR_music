@@ -85,3 +85,52 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* 1. Блочні елементи (display: block) 
+   Тег <section> і так є блочним, але ми явно задаємо це для виконання вимоги, 
+   а також додаємо йому фон і тінь, щоб він виглядав як красива картка. */
+section {
+    display: block;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* 2. Контекстний селектор (пробіл) 
+   Застосовується до БУДЬ-ЯКИХ кнопок <button>, які знаходяться всередині <section> (на будь-якому рівні вкладеності). */
+section button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+section button:hover {
+    background-color: #2ecc71;
+}
+
+/* 3. Дочірній селектор (>) 
+   Застосовується ТІЛЬКИ до тих <h2>, які є ПРЯМИМИ нащадками тегу <section>. */
+section > h2 {
+    border-left: 5px solid #8e44ad;
+    padding-left: 15px;
+    color: #2c3e50;
+    text-align: left; /* Перевизначаємо центрування для цих конкретних заголовків */
+}
+
+/* 4. Сусідній селектор (+) 
+   Застосовується до абзацу <p>, який йде ОДРАЗУ після заголовка <h2>  */
+h2 + p {
+    font-style: italic;
+    color: #34495e;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-left: 4px solid #3498db;
+    border-radius: 0 5px 5px 0;
+}
