@@ -1,30 +1,46 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Твоє Прізвище та Ім'я">
+    <meta name="author" content="Сидорчук Максим">
     <title>MusicHub — Плеєр</title>
+    <!-- Підключення зовнішнього стилю -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        nav a {
+            color: #d35400 !important; 
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Прослуховування</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="artists.html">Виконавці</a></li>
-                <li><a href="genres.html">Жанри</a></li>
-                <li><a href="player.html">Плеєр</a></li>
-            </ul>
+        <h1>MusicHub</h1>
+        <nav style="text-align: center; margin-bottom: 20px;">
+            <a href="index.html">Головна</a> |
+            <a href="artists.html">Виконавці</a> |
+            <a href="genres.html">Жанри</a> |
+            <a href="player.html">Плеєр</a>
         </nav>
     </header>
 
     <main>
         <h2>Зараз грає</h2>
-        <div id="player-container">
-            <p>Назва треку — Виконавець</p>
-            <button>Play</button>
-            <button>Pause</button>
+        <!-- Внутрішній стиль для контейнера плеєра -->
+        <div id="player-container" style="text-align: center; background-color: #e8f6f3; padding: 30px; border-radius: 10px; border: 1px solid #bdc3c7; width: 50%; margin: 0 auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <p style="font-weight: bold; font-size: 1.3em; color: #2c3e50;">Blinding Lights — The Weeknd</p>
+            <button style="padding: 10px 25px; margin: 10px; font-weight: bold; cursor: pointer;">Play</button>
+            <button style="padding: 10px 25px; margin: 10px; font-weight: bold; cursor: pointer;">Pause</button>
         </div>
     </main>
+
+    <footer style="text-align: center; padding: 20px 0; border-top: 2px solid #3498db; margin-top: 40px;">
+        <p>&copy; 2026 MusicHub. Виконав Сидорчук Максим ІС-42.</p>
+    </footer>
+
 </body>
 </html>

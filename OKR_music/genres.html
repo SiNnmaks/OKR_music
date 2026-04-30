@@ -4,67 +4,82 @@
     <meta charset="UTF-8">
     <meta name="author" content="Сидорчук Максим">
     <title>MusicHub — Жанри</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        nav a {
+            color: #d35400 !important; 
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+    </style>
 </head>
-<body bgcolor="#e6e6fa" link="#0000cc" vlink="#660099" alink="#ff0000">
+<body>
 
     <header>
-        <h1 align="center"><font face="Arial">Музичні Жанри</font></h1>
-        <p align="center">
+        <h1>MusicHub</h1>
+        <nav style="text-align: center; margin-bottom: 20px;">
             <a href="index.html">Головна</a> |
             <a href="artists.html">Виконавці</a> |
             <a href="genres.html">Жанри</a> |
             <a href="player.html">Плеєр</a>
-        </p>
+        </nav>
     </header>
 
     <main>
         <section>
-            <h2 align="center">Еволюція жанрів</h2>
-            <!-- Складна таблиця з відступами та групуванням -->
-            <table border="2" align="center" width="90%" cellspacing="5" cellpadding="10">
+            <h2>Еволюція жанрів</h2>
+            
+            <table>
                 <colgroup>
-                    <col style="background-color: #ffcccc">
-                    <col span="2" style="background-color: #ccffcc">
+                    <!-- Внутрішні стилі (inline CSS) для кольору колонок -->
+                    <col style="background-color: #ffcccc;">
+                    <col span="2" style="background-color: #ccffcc;">
                 </colgroup>
-                <tr bgcolor="#cccccc" align="center">
+                <tr>
                     <th>Десятиліття</th>
                     <th>Популярний Жанр</th>
                     <th>Ключовий Артист</th>
                 </tr>
-                <tr align="center">
-                    <!-- Об'єднання рядків (rowspan) -->
-                    <td rowspan="2"><b>80-ті</b></td>
-                    <td align="left">Синті-поп</td>
+                <tr>
+                    <td rowspan="2" style="font-weight: bold;">80-ті</td>
+                    <td style="text-align: left;">Синті-поп</td>
                     <td>Depeche Mode</td>
                 </tr>
-                <tr align="center">
-                    <td align="left">Глем-метал</td>
+                <tr>
+                    <td style="text-align: left;">Глем-метал</td>
                     <td>Mötley Crüe</td>
                 </tr>
-                <tr align="center">
-                    <td><b>90-ті</b></td>
-                    <!-- Об'єднання стовпців (colspan) -->
-                    <td colspan="2"><i>Епоха Гранжу (Nirvana, Pearl Jam) та розвитку Хіп-хопу</i></td>
+                <tr>
+                    <td style="font-weight: bold;">90-ті</td>
+                    <td colspan="2" style="font-style: italic;">Епоха Гранжу (Nirvana, Pearl Jam) та розвитку Хіп-хопу</td>
                 </tr>
             </table>
         </section>
 
-        <br><hr size="1" width="50%" color="blue">
+        
+        <hr style="border: 0; height: 1px; background-color: blue; width: 50%; margin: 20px auto;">
 
         <section>
-            <!-- Якір для переходу з головної сторінки -->
-            <a name="rock"></a>
-            <h2 align="center">Rock музика</h2>
-            <p align="center">Жанр, в якому основний акцент робиться на гітарному звучанні та ритм-секції. Це драйв, енергія та нескінченні експерименти зі звуком.</p>
-        </section>
-
-        <section>
-            <h3 align="center">Міні-плеєр</h3>
-            <p align="center">
-                <!-- Вбудований фрейм -->
-                <iframe src="player.html" name="miniplayer" width="400" height="200" frameborder="1" scrolling="no"></iframe>
+            <a id="rock"></a>
+            <h2>Rock музика</h2>
+            <!-- Внутрішній стиль для абзацу -->
+            <p style="text-align: center; color: #444; font-size: 1.1em; line-height: 1.8;">
+                Жанр, в якому основний акцент робиться на гітарному звучанні та ритм-секції. Це драйв, енергія та нескінченні експерименти зі звуком.
             </p>
         </section>
+
+        <section>
+            <h3>Міні-плеєр</h3>
+            <div style="text-align: center;">
+                <!-- Прибрано frameborder та scrolling, стилізація рамки через CSS -->
+                <iframe src="player.html" name="miniplayer" width="400" height="200" style="border: 1px solid #ccc;"></iframe>
+            </div>
+        </section>
     </main>
+    <footer style="text-align: center; padding: 20px 0; border-top: 2px solid #3498db; margin-top: 40px;">
+        <p>&copy; 2026 MusicHub. Виконав Сидорчук Максим ІС-42.</p>
+    </footer>
 </body>
 </html>

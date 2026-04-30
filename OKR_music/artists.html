@@ -1,35 +1,51 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Твоє Прізвище та Ім'я">
+    <meta name="author" content="Сидорчук Максим">
     <title>MusicHub — Виконавці</title>
+    <!-- Підключення зовнішнього стилю -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        nav a {
+            color: #d35400 !important; 
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Наші Артисти</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="artists.html">Виконавці</a></li>
-                <li><a href="genres.html">Жанри</a></li>
-                <li><a href="player.html">Плеєр</a></li>
-            </ul>
+        <h1>MusicHub</h1>
+        <nav style="text-align: center; margin-bottom: 20px;">
+            <a href="index.html">Головна</a> |
+            <a href="artists.html">Виконавці</a> |
+            <a href="genres.html">Жанри</a> |
+            <a href="player.html">Плеєр</a>
         </nav>
     </header>
 
-    <main>
-        <article>
+    <main style="width: 80%; margin: 0 auto;">
+        <section>
             <h2>The Weeknd</h2>
             <p>Канадський співак, автор пісень і продюсер, відомий своїм унікальним R&B звучанням.</p>
-            <button>Показати більше</button>
-        </article>
+            <!-- Внутрішній стиль для кнопок -->
+            <button style="padding: 8px 15px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Показати більше</button>
+        </section>
 
-        <article>
+        <section style="margin-top: 30px;">
             <h2>Billie Eilish</h2>
             <p>Американська співачка, яка стала голосом покоління Z завдяки своєму інді-поп стилю.</p>
-            <button>Показати більше</button>
-        </article>
+            <button style="padding: 8px 15px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Показати більше</button>
+        </section>
     </main>
+
+    <footer style="text-align: center; padding: 20px 0; border-top: 2px solid #3498db; margin-top: 40px;">
+        <p>&copy; 2026 MusicHub. Виконав Сидорчук Максим ІС-42.</p>
+    </footer>
+
 </body>
 </html>

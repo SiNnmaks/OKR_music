@@ -1,0 +1,87 @@
+/* Універсальний селектор та фон */
+body {
+    background-color: #f4f4f9;
+    font-family: 'Verdana', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Селектори тегів (Заголовки) */
+h1, h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+/* Селектори тегів (Списки) */
+ul, ol, dl {
+    background-color: #e8f6f3;
+    padding: 15px 30px;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+li {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Оформлення таблиць */
+table {
+    width: 85%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-size: 1.1em;
+}
+
+/* Селектор класу */
+.highlight-text {
+    font-size: 1.2em;
+    color: #e74c3c;
+    font-style: italic;
+    background-color: #fdf2e9;
+    padding: 10px;
+    border-left: 4px solid #e74c3c;
+}
+
+/* Унікальний ідентифікатор */
+#special-note {
+    font-weight: bold;
+    color: #8e44ad;
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Базовий стиль для посилань (буде перевизначено далі) */
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
