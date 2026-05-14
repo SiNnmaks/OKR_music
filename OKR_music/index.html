@@ -17,6 +17,17 @@
             margin: 0 10px;
         }
     </style>
+    <script>
+        function runInternalScript() {
+            let userReady = confirm("Вітаємо! Ви готові переглянути сторінку?");
+            if (userReady) {
+                let name = prompt("Як вас звати?", "Гість");
+                alert("Приємного перегляду, " + name + "!");
+            } else {
+                alert("Можливо, наступного разу.");
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -34,6 +45,7 @@
 
     <main>
         <section>
+            
             <h2>Вітаємо у MusicHub!</h2>
             
             <!-- Застосування класу -->
@@ -107,6 +119,19 @@
             </div>
         </section>
 
+        <section>
+            <h2>Додаткові функції</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                <button onclick="runInternalScript()" style="padding: 10px; cursor: pointer;">Вітаю!</button>
+                <button onclick="userDialog()" style="padding: 10px; cursor: pointer;">Ви маєте смак в музиці?</button>
+                <button onclick="showDeveloperInfo('Сидорчук', 'Максим')" style="padding: 10px; cursor: pointer;">Інфо про розробника</button>
+                <button onclick="compareStrings('Синті-поп', 'Рок')" style="padding: 10px; cursor: pointer;">Порівняти рядки</button>
+                <button onclick="changeBackgroundFor30Seconds()" style="padding: 10px; cursor: pointer;">Змінити фон (30 сек)</button>
+                <button onclick="redirectPage()" style="padding: 10px; cursor: pointer;">Виконавці</button>
+                <button onclick="manipulateDOM()" style="padding: 10px; cursor: pointer;">Додаткові відомості</button>
+                <button onclick="document.write('<h1>Сторінку перезаписано через document.write</h1><p>Оновіть сторінку (F5), щоб повернути все назад.</p>')" style="padding: 10px; cursor: pointer;">document.write</button>
+            </div>
+        </section>
 
         <section>
             <h2>Популярні виконавці</h2>
@@ -144,5 +169,6 @@
     <footer style="text-align: center; padding: 20px 0; border-top: 2px solid #3498db; margin-top: 40px;">
         <p>&copy; 2026 MusicHub. Виконав Сидорчук Максим ІС-42.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
