@@ -5,7 +5,7 @@
     <meta name="author" content="Сидорчук Максим">
     <title>MusicHub — Жанри</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
+    <script src="script.js" defer></script>
     <style>
         nav a {
             color: #d35400 !important; 
@@ -77,6 +77,45 @@
                 <iframe src="player.html" name="miniplayer" width="400" height="200" style="border: 1px solid #ccc;"></iframe>
             </div>
         </section>
+    
+    <section class="lab7-section">
+    <h2>Лабораторна 7: Події та Делегування</h2>
+
+    <div class="event-tests">
+        <h3>1. Управління аудіо (Обробники подій)</h3>
+        <button id="btn-attr" onclick="playRandomTrack()" class="btn">Випадковий трек</button>
+        <button id="btn-prop" class="btn">Додати в 'Улюблене'</button>
+        <button id="btn-listeners" class="btn">Запустити аудіострім</button>
+        <button id="btn-object" class="btn">Аналіз спектру (Об'єкт)</button>
+        <button id="btn-remove-obj" class="btn">Вимкнути аналізатор</button>
+    </div>
+
+    <div class="delegation-list">
+        <h3>2. Музичні жанри (Делегування)</h3>
+        <ul id="music-genres-list" class="interactive-list">
+            <li>🎸 Рок (Rock)</li>
+            <li>🎹 Синті-поп (Synth-pop)</li>
+            <li>🎷 Джаз (Jazz)</li>
+            <li>🎧 Електронна музика (EDM)</li>
+        </ul>
+    </div>
+
+    <div class="delegation-menu">
+        <h3>3. Меню плеєра (data-action)</h3>
+        <div id="player-menu" class="menu-box">
+            <button data-action="play" class="btn">▶ Play</button>
+            <button data-action="pause" class="btn">⏸ Pause</button>
+            <button data-action="stop" class="btn">⏹ Stop</button>
+        </div>
+    </div>
+
+    <div class="behavior-pattern">
+        <h3>4. Патерн "Поведінка" (Лічильник прослуховувань)</h3>
+        <button data-play-count="0" class="btn behavior-btn">Слухати пісню (0)</button>
+        <button data-play-count="0" class="btn behavior-btn">Слухати іншу (0)</button>
+    </div>
+</section>
+
     </main>
     <footer style="text-align: center; padding: 20px 0; border-top: 2px solid #3498db; margin-top: 40px;">
         <p>&copy; 2026 MusicHub. Виконав Сидорчук Максим ІС-42.</p>

@@ -110,3 +110,123 @@ function manipulateDOM() {
     
     alert("Оновлення Даних з DOM успішно виконано! Перегляньте сторінку.");
 }
+
+/* ЛАБОРАТОРНА РОБОТА №7: ПОДІЇ ТА ДЕЛЕГУВАННЯ*/
+
+// --- ЗАВДАННЯ 1: Способи призначення обробників (MusicHub версія) ---
+
+// 1.1. Через атрибут HTML (виклик прописаний в onclick="playRandomTrack()")
+function playRandomTrack() {
+    alert("🎵 Відтворення випадкового треку: 'Acoustic Guitar - Medieval Tavern Theme'.");
+}
+
+// 1.2. Через властивість DOM-об'єкта
+let btnProp = document.getElementById("btn-prop");
+if (btnProp) {
+    btnProp.onclick = function() {
+        alert("❤️ Акустичний трек успішно додано до вашого плейлиста 'Для сесій D&D'.");
+    };
+}
+
+// 1.3. Використання addEventListener (декілька обробників на одну подію)
+let btnListeners = document.getElementById("btn-listeners");
+if (btnListeners) {
+    // Перший обробник: технічний лог для розробника
+    btnListeners.addEventListener("click", () => {
+        console.log("📡 [MusicHub Сервер]: З'єднання встановлено. Буферизація аудіопотоку...");
+    });
+    // Другий обробник: взаємодія з користувачем
+    btnListeners.addEventListener("click", () => {
+        alert("🎶 Стрім запущено! Якість звуку: 320 kbps (Hi-Res).");
+    });
+}
+
+// 1.4. Об'єкт як обробник події (метод handleEvent)
+let btnObject = document.getElementById("btn-object");
+let btnRemoveObj = document.getElementById("btn-remove-obj");
+
+let audioAnalyzerObj = {
+    handleEvent(event) {
+        // Виводимо системну інформацію про подію в стилі музичного еквалайзера
+        alert(`📊 Аналізатор частот активовано!\nДжерело сигналу (тег): ${event.currentTarget.tagName}\nТип тригера: ${event.type}\nСтатус: Зчитування низьких частот...`);
+    }
+};
+
+if (btnObject) {
+    // Призначаємо об'єкт обробником
+    btnObject.addEventListener("click", audioAnalyzerObj);
+}
+
+if (btnRemoveObj) {
+    btnRemoveObj.addEventListener("click", () => {
+        // Видалення об'єкта-обробника
+        btnObject.removeEventListener("click", audioAnalyzerObj);
+        alert("🔇 Аналізатор спектру вимкнено. Кнопка 'Аналіз спектру' деактивована і більше не реагуватиме на кліки.");
+    });
+}
+
+
+// --- ЗАВДАННЯ 2: Спливання, делегування та поведінка ---
+
+// 2.1. Делегування подій: Підсвічування елементів списку
+let genresList = document.getElementById("music-genres-list");
+
+if (genresList) {
+    // Вішаємо ОДИН обробник на весь список (тег <ul>)
+    genresList.onclick = function(event) {
+        // Шукаємо найближчий тег <li> від місця кліку
+        let li = event.target.closest('li');
+
+        // Якщо клік був не на <li> (або поза нашим списком), ігноруємо
+        if (!li || !genresList.contains(li)) return;
+
+        // Знімаємо підсвічування з усіх елементів
+        let currentActive = genresList.querySelectorAll('.highlight');
+        currentActive.forEach(item => item.classList.remove('highlight'));
+
+        // Додаємо підсвічування (клас) на клікнутий <li>
+        li.classList.add('highlight');
+    };
+}
+
+// 2.2. Делегування подій: Меню кнопок (data-action)
+class PlayerMenu {
+    constructor(elem) {
+        this.elem = elem;
+        // Прив'язуємо контекст this до класу, щоб він не загубився при події
+        elem.onclick = this.onClick.bind(this);
+    }
+
+    play() { alert("▶ Відтворення музики розпочато!"); }
+    pause() { alert("⏸ Відтворення призупинено."); }
+    stop() { alert("⏹ Музику зупинено."); }
+
+    onClick(event) {
+        // Отримуємо дію з атрибута data-action (наприклад, "play")
+        let action = event.target.dataset.action;
+        if (action) {
+            // Викликаємо відповідний метод класу (this.play(), this.pause(), тощо)
+            this[action]();
+        }
+    }
+}
+
+let playerMenuDOM = document.getElementById("player-menu");
+if (playerMenuDOM) {
+    new PlayerMenu(playerMenuDOM); // Ініціалізуємо меню
+}
+
+// 2.3. Патерн «Поведінка» (Behavior)
+// Додаємо один обробник на весь документ. Він буде шукати елементи з data-play-count.
+document.addEventListener('click', function(event) {
+    // Перевіряємо, чи має клікнутий елемент атрибут data-play-count
+    if (event.target.dataset.playCount !== undefined) {
+        // Отримуємо поточне значення, збільшуємо на 1
+        let currentCount = parseInt(event.target.dataset.playCount);
+        currentCount++;
+        
+        // Оновлюємо атрибут та текст кнопки
+        event.target.dataset.playCount = currentCount;
+        event.target.innerHTML = `Слухати пісню (${currentCount})`;
+    }
+});

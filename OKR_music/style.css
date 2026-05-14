@@ -213,3 +213,51 @@ h2 + p {
     font-size: 1.5em;
     font-weight: bold;
 }
+
+/* Стилі для Лабораторної 7 */
+.lab7-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.btn {
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #34495e;
+}
+
+.interactive-list {
+    list-style: none;
+    padding: 0;
+    width: 300px;
+    border: 1px solid #ccc;
+}
+
+.interactive-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.interactive-list li:last-child {
+    border-bottom: none;
+}
+
+/* Клас для підсвічування вибраного елемента */
+.interactive-list li.highlight {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
